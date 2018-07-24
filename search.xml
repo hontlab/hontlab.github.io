@@ -248,13 +248,13 @@
       
         <tags>
             
-            <tag> 설치 </tag>
-            
-            <tag> 설정 </tag>
-            
             <tag> 이클립스 </tag>
             
             <tag> eclipse </tag>
+            
+            <tag> 설치 </tag>
+            
+            <tag> 설정 </tag>
             
         </tags>
       
@@ -277,9 +277,9 @@
             
             <tag> 설치 </tag>
             
-            <tag> 환경변수 </tag>
-            
             <tag> 설정 </tag>
+            
+            <tag> 환경변수 </tag>
             
             <tag> tomcat </tag>
             
@@ -304,13 +304,13 @@
       
         <tags>
             
-            <tag> jdk </tag>
-            
             <tag> 설치 </tag>
             
-            <tag> 환경변수 </tag>
-            
             <tag> 설정 </tag>
+            
+            <tag> jdk </tag>
+            
+            <tag> 환경변수 </tag>
             
         </tags>
       
@@ -387,9 +387,9 @@
       
         <tags>
             
-            <tag> hexo </tag>
-            
             <tag> 명령어 </tag>
+            
+            <tag> hexo </tag>
             
         </tags>
       
@@ -435,9 +435,9 @@
       
         <tags>
             
-            <tag> 명령어 </tag>
-            
             <tag> git </tag>
+            
+            <tag> 명령어 </tag>
             
         </tags>
       

@@ -7,6 +7,13 @@
     </url>
     
     <url>
+        <loc>https://hontlab.github.io/about/</loc>
+        <lastmod>2018-07-24T15:02:04.184Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
         <loc>https://hontlab.github.io/tags/</loc>
         <lastmod>2018-07-12T15:14:43.135Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -16,13 +23,6 @@
     <url>
         <loc>https://hontlab.github.io/categories/</loc>
         <lastmod>2018-07-12T15:14:43.134Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://hontlab.github.io/about/</loc>
-        <lastmod>2018-07-12T15:14:43.133Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
