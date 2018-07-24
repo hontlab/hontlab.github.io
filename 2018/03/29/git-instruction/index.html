@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--hexo-auto-canonical-->
+    <link rel="canonical" href="https://hontlab.github.io/2018/03/29/git-instruction/">
+
+    <!--Keyword-->
+    
+        <meta name="keywords" content="git,명령어">
+    
+
+    <!--Description-->
+    
+        <meta name="description" content="git 명령어, 원격저장소 설정, 저장, 업로드, 다운로드 등 명령어가 있습니다.">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="hontlab">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="git 명령어 정리">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="git 명령어, 원격저장소 설정, 저장, 업로드, 다운로드 등 명령어가 있습니다.">
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="hontlab">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+        <meta property="og:image" content="https://hontlab.github.io/img/logo.png">
+    
+
+    <meta property="og:image:width" content="1200">
+
+    <meta name="twitter:card" content="summary">
+    
+
+    <!-- Title -->
+    
+    <title>git 명령어 정리 | hontlab</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/assets/css/content.css">
+    <link rel="stylesheet" href="/assets/css/search.css">
+    <link rel="stylesheet" href="/assets/css/rocket.css">  
+    <link rel="stylesheet" href="/assets/css/accordion.css">  
+    
+    <!--
+    <link rel="stylesheet" href="/assets/css/font_kopub.css">
+    <link rel="stylesheet" href="/assets/css/font_spoqa.css">
+    -->
+
+    <!-- Search JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/assets/js/search.js"></script> 
+    <script type="text/javascript">      
+        var search_path = "search.xml";
+        if (search_path.length == 0) {
+          search_path = "search.xml";
+        }
+        var path = "/" + search_path;
+        searchFunc(path, 'local-search-input', 'local-search-result');
+    </script>
+
+    <!-- Custom JS -->
+    <script src="/assets/js/custom.js"></script> 
+    <script src="/assets/js/accordion.js"></script> 
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-116686339-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav id="top" class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- <a class="navbar-brand" href="/">hontlab</a> -->
+            <a class="navbar-brand" href="/"> hontlab <span class="logo"></span> <!-- <span class="sub">개발계발<span>게재계속</span></span> --> </a>
+        </div>
+
+        <!-- <a id="logo" href="/"></a> -->
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/about">
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+
+<div id="progress">
+  <div id="bar"></div>
+  <div class="container">
+    <div id="scroll-title">git 명령어 정리</div>
+  </div>
+</div>
+
+
+<header class="intro-header post">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-heading-wrap">
+                <div class="post-heading">                  
+                    <h1>git 명령어 정리</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-03-29
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/git/">#git</a> <a href="/tags/명령어/">#명령어</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/git/">git</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-main-content">
+                
+
+<h2>git 최초 사용을 위한 세팅</h2>
+<pre>git init</pre>
+
+<h2>원격저장소 정보 세팅</h2>
+<pre>git remote add origin (원격저장소 url)</pre>
+
+<h2>원격저장소 정보 수정</h2>
+<pre>git remote set-url origin (수정할 원격저장소 url)</pre>
+
+<h2>원격저장소에서 다운로드 할 경우</h2>
+<h3>최초</h3>
+<pre>git clone (원격저장소 url)</pre>
+<h3>이후</h3>
+<pre>git pull</pre>
+
+<h2>git 설정 정보 확인</h2>
+<pre>git config --list</pre>
+
+<h2>git 업로드 전 수정 및 삭제 파일 감지</h2>
+<pre>git status</pre>
+
+<h2>로컬에서 수정파일 add</h2>
+<pre>git add (수정파일명 or *[모든 파일])</pre>
+
+<h2>로컬에서 수정파일 commit</h2>
+<pre>git commit -m "메시지 내용"</pre>
+<p class="highlight">커밋 전에 add하여야 커밋 가능</p>
+
+<h2>git 업로드</h2>
+<pre>git push -u origin master</pre>
+<p class="highlight">svn의 commit과 달리 push까지 해줘야 실제 원격저장소에 업로드</p>
+
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-comment">
+                    
+    <hr>
+    <h3>Comments:</h3>
+    <div id="disqus_thread">        
+    </div>
+
+    <script>
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://hontlab.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+    </script>
+
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted main">&copy; 2018 <a href="https://github.com/hontlab" target="_blank" class="myGit" rel="external nofollow noopener noreferrer"> <i class="fa fa-github"></i> hontlab </a></p>              
+                <p class="copyright text-muted main theme">Powered by Hexo. Theme by <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank" rel="external nofollow noopener noreferrer">CleanBlog</a> <!-- <a href="https://github.com/YenYuHsuan/hexo-theme-beantech" target="_blank">BeanTech</a>, 
+                 <a href="https://github.com/ntalbs/hexo-theme-simplet" target="_blank">Simplet</a>.--> </p>
+
+            </div>
+        </div>
+        <a id="rocket" href="#top" class=""></a>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="/assets/js/totop.js" async></script>
+
+<!--
+<script type="text/javascript" src="/assets/js/index.js"></script>
+-->
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+<!--
+
+<script type="text/javascript">
+    var disqus_shortname = 'hontlab';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+-->
+
+    
+    <!-- How to display comment count -->
+    <!-- <script id="dsq-count-scr" src="//hontlab.disqus.com/count.js" async></script> -->
+</body>
+
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--hexo-auto-canonical-->
+    <link rel="canonical" href="https://hontlab.github.io/2018/05/13/install-jdk/">
+
+    <!--Keyword-->
+    
+        <meta name="keywords" content="jdk,설치,환경변수,설정">
+    
+
+    <!--Description-->
+    
+        <meta name="description" content="JDK 설치 및 환경변수 설정">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="hontlab">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="JDK 설치 및 환경변수 설정">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="JDK 설치 및 환경변수 설정">
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="hontlab">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+        <meta property="og:image" content="https://hontlab.github.io/img/logo.png">
+    
+
+    <meta property="og:image:width" content="1200">
+
+    <meta name="twitter:card" content="summary">
+    
+
+    <!-- Title -->
+    
+    <title>JDK 설치 및 환경변수 설정 | hontlab</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/assets/css/content.css">
+    <link rel="stylesheet" href="/assets/css/search.css">
+    <link rel="stylesheet" href="/assets/css/rocket.css">  
+    <link rel="stylesheet" href="/assets/css/accordion.css">  
+    
+    <!--
+    <link rel="stylesheet" href="/assets/css/font_kopub.css">
+    <link rel="stylesheet" href="/assets/css/font_spoqa.css">
+    -->
+
+    <!-- Search JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/assets/js/search.js"></script> 
+    <script type="text/javascript">      
+        var search_path = "search.xml";
+        if (search_path.length == 0) {
+          search_path = "search.xml";
+        }
+        var path = "/" + search_path;
+        searchFunc(path, 'local-search-input', 'local-search-result');
+    </script>
+
+    <!-- Custom JS -->
+    <script src="/assets/js/custom.js"></script> 
+    <script src="/assets/js/accordion.js"></script> 
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-116686339-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav id="top" class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- <a class="navbar-brand" href="/">hontlab</a> -->
+            <a class="navbar-brand" href="/"> hontlab <span class="logo"></span> <!-- <span class="sub">개발계발<span>게재계속</span></span> --> </a>
+        </div>
+
+        <!-- <a id="logo" href="/"></a> -->
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/about">
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+
+<div id="progress">
+  <div id="bar"></div>
+  <div class="container">
+    <div id="scroll-title">JDK 설치 및 환경변수 설정</div>
+  </div>
+</div>
+
+
+<header class="intro-header post">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-heading-wrap">
+                <div class="post-heading">                  
+                    <h1>JDK 설치 및 환경변수 설정</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-05-13
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/jdk/">#jdk</a> <a href="/tags/설치/">#설치</a> <a href="/tags/환경변수/">#환경변수</a> <a href="/tags/설정/">#설정</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/setting/">setting</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-main-content">
+                
+
+<ul class="order">
+	<li>JDK 설치</li>
+	<li>JDK 환경변수 설정
+		<ul>
+			<li>JAVA_HOME</li>
+			<li>Path</li>
+			<li>CLASSPATH</li>
+		</ul>
+	</li>
+</ul>
+
+
+
+<h2>JDK 설치</h2>
+
+<p><img src="https://user-images.githubusercontent.com/34805973/39964487-b20d2060-56c0-11e8-9c29-92f7301a612f.PNG" alt="jdk _1"></p>
+
+오라클 사이트(<a href="https://www.oracle.com/index.html" target="_blank" rel="external nofollow noopener noreferrer">https://www.oracle.com/index.html</a>) 접속하여 다운로드 버튼 클릭
+
+<p><img src="https://user-images.githubusercontent.com/34805973/39964488-b246c02c-56c0-11e8-8a4f-1dd3cd8b34f7.PNG" alt="jdk _2"></p>
+<p><img src="https://user-images.githubusercontent.com/34805973/39964489-b2746888-56c0-11e8-8b8a-81cb1f67b79f.PNG" alt="jdk _3"></p>
+
+<p>Java SE(Standard Edition) 버전 선택, EE(Enterprise Edition)는 자바를 이용한 서버측 개발을 위한 플랫폼이라 한다.</p>
+<p>위 페이지에서 맨 아래로 이동하면 jdk 이전버전이 다운 가능하다(여기서는 jdk 1.7버전을 다운)</p>
+
+<p><img src="https://user-images.githubusercontent.com/34805973/39964490-b29fb128-56c0-11e8-9820-5012f5bb912c.PNG" alt="jdk _4"></p>
+<p><img src="https://user-images.githubusercontent.com/34805973/39964491-b2c6a40e-56c0-11e8-9e3e-9bf6b99383a3.PNG" alt="jdk _5"></p>
+
+<p>여기까지 오는 링크(<a href="http://www.oracle.com/technetwork/java/javase/archive-139210.html" target="_blank" rel="external nofollow noopener noreferrer">http://www.oracle.com/technetwork/java/javase/archive-139210.html</a>)</p>
+
+<p><img src="https://user-images.githubusercontent.com/34805973/39964492-b301d7ae-56c0-11e8-9a1a-c246394bc7e9.PNG" alt="jdk _6"></p>
+
+<p>해당 OS와 비트에 맞는 파일 다운로드(윈도우 64비트라면 위 표시된 파일 다운로드)</p>
+
+<p><img src="https://user-images.githubusercontent.com/34805973/39964494-b3493c34-56c0-11e8-9dde-68c77ef68443.PNG" alt="jdk _7"></p>
+
+<p>일단 jdk는 설치완료!</p>
+
+<p><img src="https://user-images.githubusercontent.com/34805973/39964495-b3747f84-56c0-11e8-98a2-4d44fa82ad56.PNG" alt="jdk _8"></p>
+
+<p>명령 프롬프트(CMD)에서 설치된 자바 버전 확인(명령어 <span class="highlight">java -version</span>)</p>
+<p>자바 컴파일러 버전 확인(명령어 <span class="highlight">javac -version</span>) 하려고 했는데 다음과 같이 실행 불가</p>
+<p>jdk 설치에서 끝나는 것이 아니라 환경변수 설정을 해줘야 한다.</p>
+
+<h2>JDK 환경변수 설정</h2>
+<p>환경 변수는 말 그대로 변수에 어떤 값을 저장시키고 이를 환경에 저장하는 것, 환경에 저장한다는 말은 그 환경 내의 <span class="highlight">모든 프로그램이 그 변수의 값을 알 수 있게 된다는 뜻</span>, 그러니까 OS와 jdk를 이용하는 모든 프로그램에 jdk가 설치됐다고 알려주는 것으로 이해했다.</p>
+<p><span class="highlight">3가지 환경변수를 설정</span>해야 하는데 다음과 같다.</p>
+<ul>
+	<li>첫번째 환경변수, <span class="highlight">JAVA_HOME</span>(뒤이어 설정할 환경변수를 보다 편하게 설정하도록 변수화)</li>
+	<li>두번째 환경변수, <span class="highlight">Path</span>(어느 위치에서도 자바 컴파일(javac) 및 실행(java) 명령어 사용 가능하도록)</li>
+	<li>세번째 환경변수, <span class="highlight">CLASSPATH</span>(컴파일에 필요한 필수 클래스 로드하도록)</li>
+</ul>
+
+<h3>JAVA_HOME 설정</h3>
+<p class="highlight">뒤이어 설정할 환경변수를 보다 편하게 설정하도록 변수화</p>
+
+<p><img src="https://user-images.githubusercontent.com/34805973/39964496-b3a9c356-56c0-11e8-8deb-1461f845d617.PNG" alt="jdk _9"></p>
+
+<p>내 PC 마우스 오른쪽 버튼 → 속성</p>
+
+<p><img src="https://user-images.githubusercontent.com/34805973/39964497-b3d64b92-56c0-11e8-8d2a-a8fcca608c62.PNG" alt="jdk _10"></p>
+
+<p>고급 시스템 설정 → 환경 변수 → <span class="highlight">시스템 변수</span>(주의! 위의 사용자 변수가 아니라 아래 시스템 변수이다.) → 새로 만들기</p>
+
+<p><img src="https://user-images.githubusercontent.com/34805973/39964498-b4069bb2-56c0-11e8-8962-57ee266006f6.PNG" alt="jdk _11"></p>
+
+<p>변수 이름 : JAVA_HOME <br> 변수 값 : jdk 설치 경로</p>
+
+<h3>Path 설정</h3>
+<p class="highlight">어느 위치에서도 자바 컴파일(javac) 및 실행(java) 명령어 사용 가능하도록</p>
+
+<p><img src="https://user-images.githubusercontent.com/34805973/39964499-b432782c-56c0-11e8-8d19-14b53a8fd011.PNG" alt="jdk _12"></p>
+
+<p>Path 환경변수의 경우 이미 있다. 따라서 선택 후 편집을 누른다.</p>
+<p>그리고 창이 뜨면 새로 만들기</p>
+
+<p><img src="https://user-images.githubusercontent.com/34805973/39964500-b45ee74a-56c0-11e8-8b9c-75a455ffcddf.PNG" alt="jdk _13"></p>
+
+<p>%JAVA_HOME%\bin</p>
+<p>복사 후 붙여 넣으면 \가 아니라 위처럼 표시된다.</p>
+<h3>CLASSPATH</h3>
+<p class="highlight">컴파일에 필요한 필수 클래스 로드하도록</p>
+
+<p><img src="https://user-images.githubusercontent.com/34805973/39964501-b48afec0-56c0-11e8-874d-9aab103b6bd8.PNG" alt="jdk _14"></p>
+
+<p>변수 이름 : CLASSPATH <br> 변수 값 : %JAVA_HOME%\bin</p>
+<p>이제 3가지 환경변수 설정 모두 끝!</p>
+
+<p><img src="https://user-images.githubusercontent.com/34805973/39964502-b4cacea6-56c0-11e8-8a6b-7b3debce1926.PNG" alt="jdk _15"></p>
+
+<p>다시 한번, CMD에서 자바 컴파일 버전 확인(<span class="highlight">javac -version</span>)을 해보면 이제 잘 나오는 것을 확인할 수 있다.</p>
+
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-comment">
+                    
+    <hr>
+    <h3>Comments:</h3>
+    <div id="disqus_thread">        
+    </div>
+
+    <script>
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://hontlab.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+    </script>
+
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted main">&copy; 2018 <a href="https://github.com/hontlab" target="_blank" class="myGit" rel="external nofollow noopener noreferrer"> <i class="fa fa-github"></i> hontlab </a></p>              
+                <p class="copyright text-muted main theme">Powered by Hexo. Theme by <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank" rel="external nofollow noopener noreferrer">CleanBlog</a> <!-- <a href="https://github.com/YenYuHsuan/hexo-theme-beantech" target="_blank">BeanTech</a>, 
+                 <a href="https://github.com/ntalbs/hexo-theme-simplet" target="_blank">Simplet</a>.--> </p>
+
+            </div>
+        </div>
+        <a id="rocket" href="#top" class=""></a>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="/assets/js/totop.js" async></script>
+
+<!--
+<script type="text/javascript" src="/assets/js/index.js"></script>
+-->
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+<!--
+
+<script type="text/javascript">
+    var disqus_shortname = 'hontlab';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+-->
+
+    
+    <!-- How to display comment count -->
+    <!-- <script id="dsq-count-scr" src="//hontlab.disqus.com/count.js" async></script> -->
+</body>
+
+</html>

@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--hexo-auto-canonical-->
+    <link rel="canonical" href="https://hontlab.github.io/2018/05/14/install-oracle/">
+
+    <!--Keyword-->
+    
+        <meta name="keywords" content="설치,오라클,Oracle">
+    
+
+    <!--Description-->
+    
+        <meta name="description" content="Oracle 설치">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="hontlab">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="Oracle 설치">
+    
+
+    <!--Open Graph Description-->
+    
+        <meta property="og:description" content="Oracle 설치">
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="hontlab">
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article">
+    
+
+    <!--Page Cover-->
+    
+        <meta property="og:image" content="https://hontlab.github.io/img/logo.png">
+    
+
+    <meta property="og:image:width" content="1200">
+
+    <meta name="twitter:card" content="summary">
+    
+
+    <!-- Title -->
+    
+    <title>Oracle 설치 | hontlab</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/assets/css/content.css">
+    <link rel="stylesheet" href="/assets/css/search.css">
+    <link rel="stylesheet" href="/assets/css/rocket.css">  
+    <link rel="stylesheet" href="/assets/css/accordion.css">  
+    
+    <!--
+    <link rel="stylesheet" href="/assets/css/font_kopub.css">
+    <link rel="stylesheet" href="/assets/css/font_spoqa.css">
+    -->
+
+    <!-- Search JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="/assets/js/search.js"></script> 
+    <script type="text/javascript">      
+        var search_path = "search.xml";
+        if (search_path.length == 0) {
+          search_path = "search.xml";
+        }
+        var path = "/" + search_path;
+        searchFunc(path, 'local-search-input', 'local-search-result');
+    </script>
+
+    <!-- Custom JS -->
+    <script src="/assets/js/custom.js"></script> 
+    <script src="/assets/js/accordion.js"></script> 
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-116686339-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav id="top" class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- <a class="navbar-brand" href="/">hontlab</a> -->
+            <a class="navbar-brand" href="/"> hontlab <span class="logo"></span> <!-- <span class="sub">개발계발<span>게재계속</span></span> --> </a>
+        </div>
+
+        <!-- <a id="logo" href="/"></a> -->
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/about">
+                            
+                                About
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                Archives
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/categories">
+                            
+                                Categories
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/tags">
+                            
+                                Tags
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+
+<div id="progress">
+  <div id="bar"></div>
+  <div class="container">
+    <div id="scroll-title">Oracle 설치</div>
+  </div>
+</div>
+
+
+<header class="intro-header post">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-heading-wrap">
+                <div class="post-heading">                  
+                    <h1>Oracle 설치</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-05-14
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/설치/">#설치</a> <a href="/tags/오라클/">#오라클</a> <a href="/tags/Oracle/">#Oracle</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                        
+
+<a href="/categories/setting/">setting</a>
+
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-main-content">
+                <p><img src="https://user-images.githubusercontent.com/34805973/39978331-d40f9188-577a-11e8-9af0-6c363d61e681.PNG" alt="_1"></p>
+
+<p>오라클 사이트(<a href="https://www.oracle.com/index.html" target="_blank" rel="external nofollow noopener noreferrer">https://www.oracle.com/index.html</a>) 접속하여 파일 다운로드 진행</p>
+<p>여기서는 <span class="highlight">Database 11g Enterprise/Standard Editions</span>을 받는다. 아래 쭉 내려보면 차례차례 이동하여 해당 파일을 바로 받을 수 있는 링크를 걸어놨다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/34805973/39978332-d4345162-577a-11e8-848b-ed452383e5db.PNG" alt="_2"></p>
+<p><img src="https://user-images.githubusercontent.com/34805973/39978333-d45ca4f0-577a-11e8-9e38-ed4af79e4037.PNG" alt="_3"></p>
+<p><img src="https://user-images.githubusercontent.com/34805973/39978334-d48223b0-577a-11e8-8d75-4c8a821954d4.PNG" alt="_4"></p>
+<p><img src="https://user-images.githubusercontent.com/34805973/39978335-d4a85bca-577a-11e8-91c2-b3025d8a181e.PNG" alt="_5"></p>
+
+<p>여기까지의 링크(<a href="http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html" target="_blank" rel="external nofollow noopener noreferrer">http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html</a>)</p>
+
+<p>찾아보니 '클라이언트(client)' 버전을 설치해서 DB에 접속 할 수 있지만, <span class="highlight">'데이터베이스(server)' 버전을 설치하면 컴퓨터에서 자신의 DB를 운영/관리할 수 있게 된다.</span></p>
+
+<p>클라이언트는</p>
+<ul>
+	<li>서버 이외의 컴퓨터에서 서버 즉 데이터베이스에 접근하기 위한 프로그램.</li>
+	<li>오라클 서버로 접속하기 위한 매개체로 보면 된다.</li>
+	<li>다른 서버에서 오라클 클라이언트를 설치하고 오라클 서버의 정보를 입력하면 오라클 서버로 접속이 가능하게 된다.</li>
+	<li>즉, 오라클 서버가 있고 오라클 클라이언트로 연계하여 사용하는 것.</li>
+</ul>
+ <p><span class="highlight">데이터베이스 버전을 설치하면 클라이언트는 추가로 설치할 필요는 없다.</span> (데이터베이스 버전에 클라이언트가 포함되어 있다고 생각하면 된다. 데이터베이스는 설치파일이 약 2GB이며, 클라이언트는 설치파일이 약 1.2GB이다.)</p>
+
+
+<p><img src="https://user-images.githubusercontent.com/34805973/39978337-d4cf9b7c-577a-11e8-81a5-e1c4ae8579b3.PNG" alt="_6"></p>
+
+<p>다운 받으려면, 오라클 로그인 해야 한다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/34805973/39978338-d4f4e620-577a-11e8-87e6-db6255798fd1.PNG" alt="_7"></p>
+<p><img src="https://user-images.githubusercontent.com/34805973/39978288-c0feeee0-577a-11e8-870a-76a8f971fb80.PNG" alt="_8"></p>
+<p><img src="https://user-images.githubusercontent.com/34805973/39978289-c125dffa-577a-11e8-98c2-5c6739edeba9.PNG" alt="_9"></p>
+
+<p>두 개의 zip파일 압축을 풀면, database라는 하나의 폴더에 함께 압축이 풀린다. 이전에는 서로 다른 곳에 풀려서 한 폴더로 옮겨줘야 했다는데 지금은 개선된 것 같다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/34805973/39978290-c150fc76-577a-11e8-9a82-42f256354536.PNG" alt="_10"></p>
+
+<p>database 폴더 내 setup.exe 파일 실행</p>
+
+<p><img src="https://user-images.githubusercontent.com/34805973/39978291-c1760264-577a-11e8-9f51-a69ac100d5d4.PNG" alt="_11"></p>
+<p><img src="https://user-images.githubusercontent.com/34805973/39978292-c19f57a4-577a-11e8-967b-035dc9952ba6.PNG" alt="_12"></p>
+<p><img src="https://user-images.githubusercontent.com/34805973/39978293-c1c5b02a-577a-11e8-9d25-6eb9371dac9c.PNG" alt="_13"></p>
+<p><img src="https://user-images.githubusercontent.com/34805973/39978294-c1ee43d2-577a-11e8-8621-1bdd9a4a2f2d.PNG" alt="_14"></p>
+<p><img src="https://user-images.githubusercontent.com/34805973/39978295-c2164c2e-577a-11e8-8db3-01ee3a5ab648.PNG" alt="_15"></p>
+<p><img src="https://user-images.githubusercontent.com/34805973/39978296-c23cee1a-577a-11e8-8f2f-85fd3e08f1f4.PNG" alt="_16"></p>
+<p><img src="https://user-images.githubusercontent.com/34805973/39978297-c2644a46-577a-11e8-9139-a8c696999900.PNG" alt="_17"></p>
+
+<p>관리자 계정명과 비밀번호 입력</p>
+<p>여기선, root로 했는데 보통 sys로 많이 하는 것 같다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/34805973/39978298-c28abb9a-577a-11e8-93ff-f06b83f3e3b7.PNG" alt="_18"></p>
+<p><img src="https://user-images.githubusercontent.com/34805973/39978299-c2b1a46c-577a-11e8-964f-6e313dff8761.PNG" alt="_19"></p>
+<p><img src="https://user-images.githubusercontent.com/34805973/39978300-c2da0c54-577a-11e8-8b8d-6aeaa8cc5587.PNG" alt="_20"></p>
+<p><img src="https://user-images.githubusercontent.com/34805973/39978301-c302108c-577a-11e8-9ae1-84d39bbe523a.PNG" alt="_21"></p>
+<p><img src="https://user-images.githubusercontent.com/34805973/39978302-c32a3f4e-577a-11e8-9fc8-9ae1c01c75c5.PNG" alt="_22"></p>
+
+<p>오라클 연결 테스트를 위해 사용할 계정(SCOTT) 잠금해제를 위해 비밀번호 관리 버튼 클릭(테스트를 위한 것이라 필수사항은 아님)</p>
+
+<p><img src="https://user-images.githubusercontent.com/34805973/39978303-c34fde2a-577a-11e8-8393-8767e30cc2eb.PNG" alt="_23"></p>
+
+<p>SCOTT 계정 체크 해제</p>
+
+<p><img src="https://user-images.githubusercontent.com/34805973/39978304-c37604c4-577a-11e8-8600-c89f5f82f409.PNG" alt="_24"></p>
+<p><img src="https://user-images.githubusercontent.com/34805973/39978305-c39b425c-577a-11e8-886d-b2c8ca94b451.PNG" alt="_25"></p>
+
+<p>sqlplus 실행 후, 관리자로 로그인 명령어(<span class="highlight">sqlplus "/as sysdba"</span>) 수행</p>
+
+<p><img src="https://user-images.githubusercontent.com/34805973/39978306-c3c0e052-577a-11e8-968f-679dcad25f05.PNG" alt="_26"></p>
+
+<p>사용자 계정 로그인 명령어(<span class="highlight">conn scott/tiger</span>) 수행(conn 계정명/비밀번호)</p>
+<p>비밀번호가 만료됐다고 비밀번호 바꾸라 하니 바꾼다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/34805973/39978307-c3e6daaa-577a-11e8-83d6-6e9ed4c19772.PNG" alt="_27"></p>
+
+<p>scott 데이터 조회를 위한 명령어(<span class="highlight">select * from dept;</span>) 수행</p>
+<p>다음과 같이 부서 데이터가 조회되는 것을 확인할 수 있다.</p>
+
+<p><img src="https://user-images.githubusercontent.com/34805973/39978308-c40e148a-577a-11e8-9033-d2d6c44619dc.PNG" alt="_28"></p>
+
+<p>종료할 때는 exit를 2번 입력하면 종료</p>
+<p>다음에는 항상 sqlplus 명령창을 통해 DB사용하기 불편하니, DBMS(DataBase Management System)로 많이 쓰이는 Oracle SQL Developer 설치 방법을 포스팅 하고자 한다.</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 post-comment">
+                    
+    <hr>
+    <h3>Comments:</h3>
+    <div id="disqus_thread">        
+    </div>
+
+    <script>
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://hontlab.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+    </script>
+
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted main">&copy; 2018 <a href="https://github.com/hontlab" target="_blank" class="myGit" rel="external nofollow noopener noreferrer"> <i class="fa fa-github"></i> hontlab </a></p>              
+                <p class="copyright text-muted main theme">Powered by Hexo. Theme by <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank" rel="external nofollow noopener noreferrer">CleanBlog</a> <!-- <a href="https://github.com/YenYuHsuan/hexo-theme-beantech" target="_blank">BeanTech</a>, 
+                 <a href="https://github.com/ntalbs/hexo-theme-simplet" target="_blank">Simplet</a>.--> </p>
+
+            </div>
+        </div>
+        <a id="rocket" href="#top" class=""></a>
+    </div>
+</footer>
+
+
+<script type="text/javascript" src="/assets/js/totop.js" async></script>
+
+<!--
+<script type="text/javascript" src="/assets/js/index.js"></script>
+-->
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+<!--
+
+<script type="text/javascript">
+    var disqus_shortname = 'hontlab';
+
+    (function(){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+-->
+
+    
+    <!-- How to display comment count -->
+    <!-- <script id="dsq-count-scr" src="//hontlab.disqus.com/count.js" async></script> -->
+</body>
+
+</html>
