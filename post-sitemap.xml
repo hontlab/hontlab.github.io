@@ -7,6 +7,14 @@
     </url>
 
     <url>
+        <loc>https://hontlab.github.io/2018/07/24/book-6/</loc>
+        <lastmod>2018-07-24T12:25:08.931Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://hontlab.github.io/2018/07/24/book-5/</loc>
         <lastmod>2018-07-24T12:03:40.627Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -31,7 +39,7 @@
     </url>
 
     <url>
-        <loc>https://hontlab.github.io/2018/05/13/install-tomcat/</loc>
+        <loc>https://hontlab.github.io/2018/03/29/webapplication-concept/</loc>
         <lastmod>2018-07-12T15:14:43.132Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -39,7 +47,7 @@
     </url>
 
     <url>
-        <loc>https://hontlab.github.io/2018/03/29/webapplication-concept/</loc>
+        <loc>https://hontlab.github.io/2018/05/13/install-tomcat/</loc>
         <lastmod>2018-07-12T15:14:43.132Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
