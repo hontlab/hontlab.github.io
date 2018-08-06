@@ -156,6 +156,20 @@
     </url>
 
     <url>
+        <loc>https://hontlab.github.io/tags/tomcat/</loc>
+        <lastmod>2018-07-12T15:14:43.132Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hontlab.github.io/tags/%ED%86%B0%EC%BA%A3/</loc>
+        <lastmod>2018-07-12T15:14:43.132Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://hontlab.github.io/tags/%EC%9B%B9%EC%96%B4%ED%94%8C%EB%A6%AC%EC%BC%80%EC%9D%B4%EC%85%98/</loc>
         <lastmod>2018-07-12T15:14:43.132Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -178,20 +192,6 @@
 
     <url>
         <loc>https://hontlab.github.io/tags/CGI/</loc>
-        <lastmod>2018-07-12T15:14:43.132Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hontlab.github.io/tags/tomcat/</loc>
-        <lastmod>2018-07-12T15:14:43.132Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hontlab.github.io/tags/%ED%86%B0%EC%BA%A3/</loc>
         <lastmod>2018-07-12T15:14:43.132Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -240,14 +240,14 @@
     </url>
 
     <url>
-        <loc>https://hontlab.github.io/tags/%EB%A6%AC%EB%8D%94/</loc>
+        <loc>https://hontlab.github.io/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/</loc>
         <lastmod>2018-08-06T14:59:35.985Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://hontlab.github.io/tags/%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85/</loc>
+        <loc>https://hontlab.github.io/tags/%EB%A6%AC%EB%8D%94/</loc>
         <lastmod>2018-08-06T14:59:35.985Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
