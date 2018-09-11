@@ -14,20 +14,6 @@
     </url>
 
     <url>
-        <loc>https://hontlab.github.io/categories/hexo/</loc>
-        <lastmod>2018-07-12T15:14:43.125Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://hontlab.github.io/categories/setting/</loc>
-        <lastmod>2018-07-12T15:14:43.132Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://hontlab.github.io/categories/jsp/</loc>
         <lastmod>2018-07-12T15:14:43.132Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -35,8 +21,22 @@
     </url>
 
     <url>
+        <loc>https://hontlab.github.io/categories/hexo/</loc>
+        <lastmod>2018-09-11T12:09:11.749Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://hontlab.github.io/categories/setting/</loc>
+        <lastmod>2018-09-11T12:21:05.928Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://hontlab.github.io/categories/book/</loc>
-        <lastmod>2018-08-06T14:59:35.985Z</lastmod>
+        <lastmod>2018-09-11T12:58:42.554Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
