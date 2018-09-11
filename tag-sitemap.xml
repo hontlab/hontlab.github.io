@@ -121,14 +121,14 @@
     </url>
 
     <url>
-        <loc>https://hontlab.github.io/tags/hexo/</loc>
+        <loc>https://hontlab.github.io/tags/%EB%AA%85%EB%A0%B9%EC%96%B4/</loc>
         <lastmod>2018-09-11T12:09:11.749Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
-        <loc>https://hontlab.github.io/tags/%EB%AA%85%EB%A0%B9%EC%96%B4/</loc>
+        <loc>https://hontlab.github.io/tags/hexo/</loc>
         <lastmod>2018-09-11T12:09:11.749Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
